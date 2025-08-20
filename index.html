@@ -58,26 +58,10 @@
       50% { border-color: transparent }
     }
 
-    button {
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 1em;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 10px #fff;
-    }
-
-    #sorpresa {
+    .sorpresa {
       display: none;
-      margin-top: 20px;
       font-size: 1.2em;
-      color: #fff;
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 3s ease-in;
     }
 
     @keyframes fadeIn {
@@ -89,27 +73,25 @@
 <body>
   <div class="stars"></div>
 
-  <div class="typing">
+  <div class="typing" id="mensajePrincipal">
     Tu existencia es un milagro que el universo me permitió presenciar. Gracias por ser tú.
   </div>
 
-  <button onclick="revelarSorpresa()">🌌 Haz clic si crees en los milagros</button>
-
-  <div id="sorpresa">
+  <div class="sorpresa" id="mensajeSorpresa">
     ✨ Esta página es un reflejo de lo que provocas en mi alma.  
     <br>Tu luz me cambió para siempre.
   </div>
 
   <audio autoplay loop>
-    <source src="https://example.com/musica-suave.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/BTSbySen/BTS%20Your%20Eyes%20Tell.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
   <script>
-    function revelarSorpresa() {
-      document.getElementById("sorpresa").style.display = "block";
-    }
+    // Espera 5 segundos después del mensaje principal para mostrar la sorpresa
+    setTimeout(function() {
+      document.getElementById("mensajeSorpresa").style.display = "block";
+    }, 5000); // 5000 milisegundos = 5 segundos
   </script>
 </body>
 </html>
-
