@@ -60,9 +60,9 @@
     está aquí para recordarte cuánto significas para mí.
   </p>
 
-  <audio id="miAudio" autoplay>
+  <!-- Audio sin controles visibles -->
+  <audio id="miAudio" autoplay hidden>
     <source src="https://lleremi08-netizen.github.io/REGALO-DE-QUIEN-TE-AMA-TANTO/ddesigns.co.za%20-%20John%20Legend%20-%20All%20of%20Me%20(Official%20Video)%20(320%20KBps).m4a" type="audio/mp4">
-    Tu navegador no soporta audio.
   </audio>
 
   <script>
@@ -77,7 +77,7 @@
       }, 20000);
     });
 
-    // Generar corazones animados
+    // Corazones animados flotando
     function crearCorazon() {
       const heart = document.createElement("div");
       heart.className = "heart";
