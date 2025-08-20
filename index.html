@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi mejor coincidencia</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #f8bbd0, #e1bee7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #4a148c;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .mensaje {
+      max-width: 600px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      animation: slideUp 2s ease-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensaje">
+    <h1>Mi mejor coincidencia</h1>
+    <p>“No sé si el destino existe, pero tú eres mi mejor coincidencia.”<br><br>
+    Y si el universo conspiró para que te conociera, entonces le agradezco cada estrella.</p>
+  </div>
+</body>
+</html>
