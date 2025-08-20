@@ -2,96 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Regalo de quien te ama tanto</title>
+  <title>Para Ti ✨</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #e6ccf2; /* lila suave */
-      color: #4b006e;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      height: 100vh;
       overflow: hidden;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-top: 100px;
-    }
-
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 20px auto;
-      line-height: 1.6;
-    }
-
-    .heart {
+    .stars {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      background: url('https://i.imgur.com/8QfQ6bY.png') no-repeat center;
-      background-size: contain;
-      animation: float 10s linear infinite;
-      opacity: 0.8;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      box-shadow:
+        100px 200px #fff,
+        300px 400px #fff,
+        500px 100px #fff,
+        700px 300px #fff,
+        900px 500px #fff,
+        1100px 200px #fff;
+      animation: twinkle 2s infinite ease-in-out;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-      }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.2; }
+    }
+
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      font-size: 1.5em;
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      text-shadow: 0 0 10px #fff;
+    }
+
+    #sorpresa {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #fff;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <div class="stars"></div>
 
-  <h1>Para ti, que cambiaste mi universo</h1>
-  <p>
-    Este regalo es una constelación de todo lo que siento.  
-    Cada palabra, cada nota, cada corazón...  
-    está aquí para recordarte cuánto significas para mí.
-  </p>
+  <div class="typing">
+    Tu existencia es un milagro que el universo me permitió presenciar. Gracias por ser tú.
+  </div>
 
-  <!-- Audio sin controles visibles -->
-  <audio id="miAudio" autoplay hidden>
-    <source src="https://lleremi08-netizen.github.io/REGALO-DE-QUIEN-TE-AMA-TANTO/ddesigns.co.za%20-%20John%20Legend%20-%20All%20of%20Me%20(Official%20Video)%20(320%20KBps)%20(mp3cut.net).mp3" type="audio/mpeg">
+  <button onclick="revelarSorpresa()">🌌 Haz clic si crees en los milagros</button>
+
+  <div id="sorpresa">
+    ✨ Esta página es un reflejo de lo que provocas en mi alma.  
+    <br>Tu luz me cambió para siempre.
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://example.com/musica-suave.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
   </audio>
 
   <script>
-    const audio = document.getElementById("miAudio");
-
-    audio.addEventListener("canplay", () => {
-      audio.currentTime = 0; // empieza desde el inicio del fragmento
-      audio.play();
-
-      setTimeout(() => {
-        audio.pause(); // se detiene después de 20 segundos
-      }, 20000);
-    });
-
-    // Corazones animados flotando
-    function crearCorazon() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 12000);
+    function revelarSorpresa() {
+      document.getElementById("sorpresa").style.display = "block";
     }
-
-    setInterval(crearCorazon, 500);
   </script>
-
 </body>
 </html>
+
