@@ -43,56 +43,64 @@
       overflow: hidden;
       white-space: nowrap;
       border-right: 2px solid #fff;
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
       font-size: 1.5em;
-      max-width: 80%;
-      margin-bottom: 20px;
+      max-width: 90%;
+      width: 0;
     }
 
-    @keyframes typing {
+    .mensaje1 {
+      animation: typing1 6s steps(80, end), blink 0.75s step-end infinite;
+    }
+
+    .mensaje2 {
+      animation: typing2 6s steps(80, end), blink 0.75s step-end infinite;
+      animation-delay: 6.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    @keyframes typing1 {
       from { width: 0 }
       to { width: 100% }
+    }
+
+    @keyframes typing2 {
+      from { width: 0; opacity: 1 }
+      to { width: 100%; opacity: 1 }
     }
 
     @keyframes blink {
       50% { border-color: transparent }
     }
 
-    .sorpresa {
-      display: none;
-      font-size: 1.2em;
-      animation: fadeIn 3s ease-in;
+    audio {
+      margin-top: 20px;
+      width: 80%;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .nota {
+      font-size: 0.9em;
+      margin-top: 10px;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
   <div class="stars"></div>
 
-  <div class="typing" id="mensajePrincipal">
-    Tu existencia es un milagro que el universo me permitió 
-    presenciar. Gracias por ser tú.
+  <div class="typing mensaje1">
+    Tu existencia es un milagro que el universo me permitió presenciar. Gracias por ser tú.
   </div>
 
-  <div class="sorpresa" id="mensajeSorpresa">
-    ✨ Esta página es un reflejo de lo que provocas en mi alma.  
-    <br>Tu luz me cambió para siempre.
+  <div class="typing mensaje2">
+    ✨ Esta página es un reflejo de lo que provocas en mi alma. Tu luz me cambió para siempre.
   </div>
 
-  <audio autoplay loop>
+  <audio controls>
     <source src="https://archive.org/download/BTSbySen/BTS%20Your%20Eyes%20Tell.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
-  <script>
-    // Espera 5 segundos después del mensaje principal para mostrar la sorpresa
-    setTimeout(function() {
-      document.getElementById("mensajeSorpresa").style.display = "block";
-    }, 5000); // 5000 milisegundos = 5 segundos
-  </script>
+  <p class="nota">🌌 Si deseas escuchar lo que siente mi alma, activa el sonido de tu dispositivo.</p>
 </body>
 </html>
