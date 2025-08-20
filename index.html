@@ -12,6 +12,7 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       overflow: hidden;
+      cursor: pointer;
     }
 
     h1 {
@@ -51,7 +52,7 @@
     }
   </style>
 </head>
-<body>
+<body onclick="activarAudio()">
 
   <h1>Para ti, que cambiaste mi universo</h1>
   <p>
@@ -61,21 +62,20 @@
   </p>
 
   <!-- Audio sin controles visibles -->
-  <audio id="miAudio" autoplay hidden>
+  <audio id="miAudio" hidden>
     <source src="https://lleremi08-netizen.github.io/REGALO-DE-QUIEN-TE-AMA-TANTO/ddesigns.co.za%20-%20John%20Legend%20-%20All%20of%20Me%20(Official%20Video)%20(320%20KBps)%20(mp3cut.net).mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    const audio = document.getElementById("miAudio");
-
-    audio.addEventListener("canplay", () => {
-      audio.currentTime = 0; // empieza desde el inicio del fragmento
+    function activarAudio() {
+      const audio = document.getElementById("miAudio");
+      audio.currentTime = 0;
       audio.play();
 
       setTimeout(() => {
-        audio.pause(); // se detiene después de 20 segundos
+        audio.pause();
       }, 20000);
-    });
+    }
 
     // Corazones animados flotando
     function crearCorazon() {
@@ -95,3 +95,4 @@
 
 </body>
 </html>
+
