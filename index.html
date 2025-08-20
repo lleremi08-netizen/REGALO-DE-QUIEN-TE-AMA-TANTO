@@ -58,27 +58,9 @@
       50% { border-color: transparent }
     }
 
-    button {
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 1em;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 10px #fff;
-    }
-
-    #sorpresa {
-      display: none;
-      margin-top: 20px;
+    .sorpresa {
       font-size: 1.2em;
-      color: #fff;
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 3s ease-in;
     }
 
     @keyframes fadeIn {
@@ -94,30 +76,14 @@
     Tu existencia es un milagro que el universo me permitió presenciar. Gracias por ser tú.
   </div>
 
-  <button id="botonMagico">🌌 Haz clic si crees en los milagros</button>
-
-  <div id="sorpresa">
+  <div class="sorpresa">
     ✨ Esta página es un reflejo de lo que provocas en mi alma.  
     <br>Tu luz me cambió para siempre.
   </div>
 
-  <audio id="musica" style="display: none;">
+  <audio autoplay loop>
     <source src="https://archive.org/download/BTSbySen/BTS%20Your%20Eyes%20Tell.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
-
-  <script>
-    document.getElementById("botonMagico").addEventListener("click", function() {
-      const sorpresa = document.getElementById("sorpresa");
-      const musica = document.getElementById("musica");
-
-      sorpresa.style.display = "block";
-
-      // Intenta reproducir la música
-      musica.play().catch(function(error) {
-        console.log("El navegador bloqueó el autoplay. El usuario debe interactuar primero.");
-      });
-    });
-  </script>
 </body>
 </html>
