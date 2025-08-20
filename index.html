@@ -65,6 +65,7 @@
       font-size: 1em;
       cursor: pointer;
       transition: transform 0.3s ease;
+      margin-top: 10px;
     }
 
     button:hover {
@@ -93,7 +94,7 @@
     Tu existencia es un milagro que el universo me permitió presenciar. Gracias por ser tú.
   </div>
 
-  <button onclick="revelarSorpresa()">🌌 Haz clic si crees en los milagros</button>
+  <button id="botonMagico">🌌 Haz clic si crees en los milagros</button>
 
   <div id="sorpresa">
     ✨ Esta página es un reflejo de lo que provocas en mi alma.  
@@ -106,10 +107,17 @@
   </audio>
 
   <script>
-    function revelarSorpresa() {
-      document.getElementById("sorpresa").style.display = "block";
-      document.getElementById("musica").play();
-    }
+    document.getElementById("botonMagico").addEventListener("click", function() {
+      const sorpresa = document.getElementById("sorpresa");
+      const musica = document.getElementById("musica");
+
+      sorpresa.style.display = "block";
+
+      // Intenta reproducir la música
+      musica.play().catch(function(error) {
+        console.log("El navegador bloqueó el autoplay. El usuario debe interactuar primero.");
+      });
+    });
   </script>
 </body>
 </html>
